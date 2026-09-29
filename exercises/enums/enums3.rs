@@ -6,10 +6,10 @@
 // hint.
 
 enum Message {
-    ChangeColor(u32, u32, u32),
+    ChangeColor(u8, u8, u8),
     Echo(String),
     Move(Point),
-    Quit
+    Quit,
 }
 
 struct Point {
@@ -21,7 +21,7 @@ struct State {
     color: (u8, u8, u8),
     position: Point,
     quit: bool,
-    message: String
+    message: String,
 }
 
 impl State {
@@ -33,7 +33,9 @@ impl State {
         self.quit = true;
     }
 
-    fn echo(&mut self, s: String) { self.message = s }
+    fn echo(&mut self, s: String) {
+        self.message = s
+    }
 
     fn move_position(&mut self, p: Point) {
         self.position = p;
@@ -44,11 +46,11 @@ impl State {
         // variants
         // Remember: When passing a tuple as a function argument, you'll need
         // extra parentheses: fn function((t, u, p, l, e))
-        match Message {
-            ChangeColor(r, g, b) => change_color(self, (r, g, b)),
-            Echo(str) => echo(self, str),
-            Move(p) => move_position(self, p),
-            Quit => quit(self)
+        match message {
+            Message::ChangeColor(r, g, b) => self.change_color((r, g, b)),
+            Message::Echo(str) => self.echo(str),
+            Message::Move(p) => self.move_position(p),
+            Message::Quit => self.quit(),
         }
     }
 }

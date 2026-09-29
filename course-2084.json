@@ -2,8 +2,8 @@
   "schema": 1,
   "courseId": 2084,
   "repository": "LearningOS/2026a-rustling-Jeffrey-Gong",
-  "commit": "a27ff65fd214164bd949605ab436b8a23966fae8",
-  "score": 35,
+  "commit": "abe1158029c920db8ce0a38d38e781523763703d",
+  "score": 36,
   "totalScore": 110,
   "exercises": [
     {
@@ -254,9 +254,9 @@
     {
       "name": "enums3",
       "max": 1,
-      "score": 0,
-      "status": "fail",
-      "exitCode": 1
+      "score": 1,
+      "status": "pass",
+      "exitCode": 0
     },
     {
       "name": "strings1",
@@ -778,9 +778,9 @@
     }
   ],
   "student": "Jeffrey-Gong",
-  "runId": "36573380963",
+  "runId": "36574581648",
   "runAttempt": "1",
   "upload": {
-    "status": "accepted"
+    "status": "pending"
   }
 }

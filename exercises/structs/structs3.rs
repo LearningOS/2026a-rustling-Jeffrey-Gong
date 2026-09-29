@@ -32,7 +32,7 @@ impl Package {
     }
 
     fn get_fees(&self, cents_per_gram: i32) -> u32 {
-        self.weight_in_grams * cents_per_gram
+        (self.weight_in_grams * cents_per_gram).try_into().unwrap()
     }
 }
 
